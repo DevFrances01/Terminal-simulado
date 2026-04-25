@@ -13,7 +13,7 @@ void printDD()
     printf("\n            |                                          |");
     printf("\n            |                 HELLO                    |");
     printf("\n            |                                          |");
-    printf("\n            |        SEJA BEM-VINDO AO leLINUX         |");
+    printf("\n            |  SEJA BEM-VINDO AO Terminal-simulado     |");
     printf("\n            |                                          |");
     printf("\n            |   OBS: ESTE NAO E UM SISTEMA REAL        |");
     printf("\n            |                SE DIVIRTA!               |");
@@ -21,16 +21,11 @@ void printDD()
     printf("\n            |__________________________________________|\n\n");
     std::cout << reset_cor;
 }
-void img(){
-     
-    
 
-}
 void lodboot()
 {
-    printf("Booting leLINUX...\n");
+    printf("Booting Terminal-simulado...\n");
     Sleep(800);
-    printf("[ OK ] Loading kernel\n");
     Sleep(800);
     printf("[ OK ] Loading lib\n");
     Sleep(800);
@@ -76,7 +71,7 @@ if (!novoUser.empty()) {
     }
 };
     comandos["version"] = []() {
-        printf("leLINUX v1.0\n");
+        printf("Terminal-simulado v1.0\n");
     };
     comandos["clear"] = []() {
 #ifdef _WIN32
