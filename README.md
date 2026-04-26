@@ -56,7 +56,6 @@ g++ main.cpp -o terminal
 
 ## 🧩 Melhorias futuras
 
-* Integração com Python
 * Sistema de arquivos simulado (`ls`, `cd`)
 * Plugins/scripts
 * Interface mais avançada
