@@ -60,8 +60,8 @@ int main()
         printf("\nComandos disponiveis:\n");
         printf("help    - mostrar comandos\n");
         printf("note    - cria uma anotacao\n");
-        printf("notes -    ver notas criadas\n");
-        printf("edit -     edita notas criadas \n");
+        printf("notes   -  ver notas criadas\n");
+        printf("edit    -  edita notas criadas \n");
         printf("info    - informacoes\n");
         printf("ver     - versao do sistema\n");
         printf("clear   - limpar tela\n");
