@@ -1,3 +1,10 @@
-output/
+# Compilação
+/build/
+/output/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# IDE
 .vscode/
-                                

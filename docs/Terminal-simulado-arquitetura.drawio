@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" modified="2026-11-02T00:00:00.000Z" agent="ChatGPT" version="24.7.17" type="device">
+  <diagram id="terminal-architecture" name="Arquitetura">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="TERMINAL-SIMULADO — Arquitetura geral" style="text;html=1;align=left;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#1F2937;" vertex="1" parent="1">
+          <mxGeometry x="60" y="30" width="900" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="subtitle" value="Interface em Python • Núcleo e regras em C++ • Comunicação local entre processos" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="60" y="70" width="1000" height="30" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="user" value="USUÁRIO&#xa;Informa usuário e senha" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#E0F2FE;strokeColor=#0284C7;fontColor=#0C4A6E;fontStyle=1;fontSize=14;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="90" y="170" width="190" height="75" as="geometry"/>
+        </mxCell>
+        <mxCell id="python" value="PYTHON — INTERFACE&#xa;CustomTkinter&#xa;&#xa;login.py • main.py&#xa;assets/images/" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#F3E8FF;strokeColor=#9333EA;fontColor=#581C87;fontSize=14;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="390" y="145" width="270" height="135" as="geometry"/>
+        </mxCell>
+        <mxCell id="cppauth" value="C++ — AUTENTICAÇÃO&#xa;Recebe credenciais e valida&#xa;as regras de acesso" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#DBEAFE;strokeColor=#2563EB;fontColor=#1E3A8A;fontSize=14;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="790" y="160" width="260" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="data" value="DATA&#xa;Dados de usuários&#xa;Preferencialmente hashes de senha" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="165" width="220" height="105" as="geometry"/>
+        </mxCell>
+        <mxCell id="terminal" value="TERMINAL-SIMULADO&#xa;Acesso autorizado" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;fillColor=#DCFCE7;strokeColor=#16A34A;fontColor=#14532D;fontStyle=1;fontSize=16;spacing=12;" vertex="1" parent="1">
+          <mxGeometry x="790" y="365" width="260" height="85" as="geometry"/>
+        </mxCell>
+        <mxCell id="dispatcher" value="CORE C++ — COMMAND DISPATCHER&#xa;Localiza e executa comandos registrados" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#EFF6FF;strokeColor=#3B82F6;fontColor=#1E3A8A;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="790" y="520" width="260" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="commands" value="COMANDOS&#xa;help • info • ver • calc • notes • exit" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#F8FAFC;strokeColor=#64748B;fontColor=#334155;fontSize=13;spacing=10;" vertex="1" parent="1">
+          <mxGeometry x="1190" y="520" width="220" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="storage" value="ARMAZENAMENTO&#xa;Notas, configurações e dados locais" style="shape=cylinder;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#FEF3C7;strokeColor=#D97706;fontColor=#78350F;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="390" y="520" width="250" height="90" as="geometry"/>
+        </mxCell>
+        <mxCell id="ipc" value="Comunicação local&#xa;stdin/stdout ou IPC&#xa;Não passar senha em argumentos de linha de comando" style="shape=note;whiteSpace=wrap;html=1;fillColor=#FFF7ED;strokeColor=#EA580C;fontColor=#7C2D12;fontSize=12;size=15;" vertex="1" parent="1">
+          <mxGeometry x="390" y="335" width="270" height="105" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;" edge="1" parent="1" source="user" target="python"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="Credenciais" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontSize=12;" edge="1" parent="1" source="python" target="cppauth"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="Consulta de usuário" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#64748B;strokeWidth=2;fontSize=12;" edge="1" parent="1" source="cppauth" target="data"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="Acesso autorizado" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#16A34A;strokeWidth=2;fontSize=12;" edge="1" parent="1" source="cppauth" target="terminal"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#2563EB;strokeWidth=2;" edge="1" parent="1" source="terminal" target="dispatcher"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="Despacha" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#2563EB;strokeWidth=2;fontSize=12;" edge="1" parent="1" source="dispatcher" target="commands"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="Lê/grava" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeColor=#D97706;strokeWidth=2;fontSize=12;" edge="1" parent="1" source="dispatcher" target="storage"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#EA580C;strokeWidth=2;" edge="1" parent="1" source="ipc" target="python"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="treeTitle" value="ESTRUTURA INICIAL DO PROJETO" style="text;html=1;align=left;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#1F2937;" vertex="1" parent="1">
+          <mxGeometry x="60" y="700" width="700" height="35" as="geometry"/>
+        </mxCell>
+        <mxCell id="tree" value="Terminal-simulado/&#xa;├── src/                         # Código C++&#xa;│   ├── main.cpp&#xa;│   └── core/&#xa;│       └── command/&#xa;│           ├── CommandDispatcher.hpp&#xa;│           └── CommandDispatcher.cpp&#xa;│&#xa;├── py/                          # Interface Python&#xa;│   ├── main.py&#xa;│   ├── login.py&#xa;│   └── assets/images/&#xa;│&#xa;├── data/                        # Dados persistentes&#xa;├── output/                      # Executáveis gerados&#xa;└── .gitignore" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=16;fontFamily=Courier New;fontSize=13;fillColor=#F8FAFC;strokeColor=#94A3B8;fontColor=#0F172A;" vertex="1" parent="1">
+          <mxGeometry x="60" y="750" width="720" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="legend" value="Legenda: Roxo = Python/interface • Azul = C++/lógica • Amarelo = dados • Verde = fluxo após autenticação" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#64748B;" vertex="1" parent="1">
+          <mxGeometry x="820" y="760" width="650" height="35" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
